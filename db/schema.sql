@@ -10,4 +10,8 @@ CREATE TABLE burgers (
     `devoured` BOOLEAN
 );
 
+UPDATE burgers SET devoured = 0 WHERE id > 0;
+
+DELETE FROM burgers WHERE id > 3;
+
 SELECT * FROM burgers;

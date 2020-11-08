@@ -12,11 +12,11 @@ const orm = {
     const [rows] = await connection.query(sql, [burgerName, false]);
     return rows;
   },
-  // updateOne: async function () {
-  //   const sql = "";
-  //   const [rows] = await connection.query(sql, []);
-  //   return rows;
-  // },
+  updateOne: async function (id) {
+    const sql = "UPDATE burgers SET ? WHERE id = ?";
+    const [rows] = await connection.query(sql, [{ devoured: 1 }, id]);
+    return rows;
+  },
 };
 
 module.exports = orm;

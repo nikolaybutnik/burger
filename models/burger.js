@@ -13,7 +13,9 @@ class Burger {
   static async insertOne(burgerName) {
     return orm.insertOne(burgerName);
   }
-  // async updateOne() {}
+  static async updateOne(id) {
+    return orm.updateOne(id);
+  }
 }
 
 module.exports = Burger;
