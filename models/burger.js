@@ -5,15 +5,13 @@ class Burger {
     this.name = name;
     this.devour = devour;
   }
-  async selectAll() {
-    orm.selectAll();
+
+  static async selectAll() {
+    return orm.selectAll();
   }
-  async insertOne() {
-    orm.insertOne();
-  }
-  async updateOne() {
-    orm.updateOne();
-  }
+
+  // async insertOne() {}
+  // async updateOne() {}
 }
 
 module.exports = Burger;
