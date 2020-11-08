@@ -7,11 +7,11 @@ const orm = {
     // console.log(rows);
     return rows;
   },
-  // insertOne: async function () {
-  //   const sql = "";
-  //   const [rows] = await connection.query(sql, []);
-  //   return rows;
-  // },
+  insertOne: async function (burgerName) {
+    const sql = "INSERT INTO burgers (burger_name, devoured) VALUES (?, ?)";
+    const [rows] = await connection.query(sql, [burgerName, false]);
+    return rows;
+  },
   // updateOne: async function () {
   //   const sql = "";
   //   const [rows] = await connection.query(sql, []);

@@ -10,7 +10,9 @@ class Burger {
     return orm.selectAll();
   }
 
-  // async insertOne() {}
+  static async insertOne(burgerName) {
+    return orm.insertOne(burgerName);
+  }
   // async updateOne() {}
 }
 
