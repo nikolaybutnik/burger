@@ -2,6 +2,8 @@
 
 <h2>Ready to devour!</h2>
 
+{{!-- Loop through each object in the array received from burgers_controller.js, and dynamically display un-eaten burgers on the screen. --}}
+{{!-- Uneaten burgers have a 'devoured' value of 0 (false). --}}
 <ul>
     {{#each burgers}}
     {{#unless this.devoured}}
@@ -13,6 +15,8 @@
 
 <h2>Devoured!</h2>
 
+{{!-- Loop through each object in the array received from burgers_controller.js, and dynamically display devoured burgers on the screen. --}}
+{{!-- Devoured burgers have a 'devoured' value of 1 (true). --}}
 <ul>
     {{#each burgers}}
     {{#if this.devoured}}
@@ -21,6 +25,7 @@
     {{/each}}
 </ul>
 
+{{!-- Create a form that takes in a name for a new burger. The input is then processed in the script below. --}}
 <h2>Add a Burger</h2>
 <form id="create-form">
 
@@ -34,7 +39,7 @@
 
 <script>
     // Form behavior on adding a new burger.
-    // On form submit, creata a burger object based on name provided by user, and post the api/burgers route.
+    // On form submit prevent default beahavior, create a burger object based on name provided by user, and POST the api/burgers route.
     // If post was successful, reload the page.
     document.getElementById("create-form").addEventListener("submit", function (event) {
         event.preventDefault()
@@ -56,7 +61,7 @@
 
     // Get reference to every DEVOUR IT! button on the screen.
     // Assign an event listener to every button that on click obtains the data-id number of the button clicked,
-    // parses it into an object and sends the object to the api/burgers/id route. Reload the page when done.
+    // parses it into an object and sends the object to the api/burgers/id route via PATCH. Reload the page when done.
     document.querySelectorAll(".devour-it").forEach(button => {
         button.addEventListener("click", function () {
             const id = this.getAttribute("data-id")
