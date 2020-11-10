@@ -6,15 +6,27 @@ class Burger {
     this.devour = devour;
   }
 
-  static async selectAll() {
-    return orm.selectAll();
+  static async selectAllBurgers(col_name) {
+    return orm.selectAll(col_name);
   }
 
-  static async insertOne(burgerName) {
-    return orm.insertOne(burgerName);
+  static async insertOneBurger(
+    table_name,
+    col_name_1,
+    col_name_2,
+    value_1,
+    value_2
+  ) {
+    return orm.insertOne(table_name, col_name_1, col_name_2, value_1, value_2);
   }
-  static async updateOne(id) {
-    return orm.updateOne(id);
+
+  static async updateOneBurger(
+    table_name,
+    key_val_to_set,
+    condition_col_name,
+    value
+  ) {
+    return orm.updateOne(table_name, key_val_to_set, condition_col_name, value);
   }
 }
 

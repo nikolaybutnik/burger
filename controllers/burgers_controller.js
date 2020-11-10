@@ -6,14 +6,14 @@ const router = express.Router();
 // Create default / route that renders all burgers in the database.
 // Obtain all burgers in the database, parse into object, and render through index.handlebars.
 router.get("/", async function (req, res) {
-  const data = await Burger.selectAll();
+  const data = await Burger.selectAllBurgers("burgers");
   res.render("index", { burgers: data });
 });
 
 // Create an api GET route that displays all burger objects in the database in json format.
 router.get("/api/burgers", async function (req, res) {
   try {
-    const burgers = await Burger.selectAll();
+    const burgers = await Burger.selectAllBurgers("burgers");
     res.status(200).json({ data: burgers });
   } catch (err) {
     res.status(500).json(err);
@@ -24,7 +24,13 @@ router.get("/api/burgers", async function (req, res) {
 // Pull the data from the object and INSERT the new burger into the database.
 router.post("/api/burgers", async function (req, res) {
   try {
-    const data = await Burger.insertOne(req.body.burger_name);
+    const data = await Burger.insertOneBurger(
+      "burgers",
+      "burger_name",
+      "devoured",
+      req.body.burger_name,
+      false
+    );
     res.status(201).json(data);
   } catch (err) {
     res.status(500).json(err);
@@ -36,7 +42,12 @@ router.post("/api/burgers", async function (req, res) {
 router.patch("/api/burgers/:id", async function (req, res) {
   try {
     const id = req.params.id;
-    const burgerUpdate = await Burger.updateOne(id);
+    const burgerUpdate = await Burger.updateOneBurger(
+      "burgers",
+      { devoured: 1 },
+      "id",
+      id
+    );
     res.status(201).json(burgerUpdate);
   } catch (err) {
     res.status(500).json(err);
