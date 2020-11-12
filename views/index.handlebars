@@ -1,8 +1,8 @@
-<h1>Eat-Da-Burger!</h1>
+<h1 id="main-title">Eat-Da-Burger!</h1>
 
 <div class="container">
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm display-database">
             {{!-- Loop through each object in the array received from burgers_controller.js, and dynamically display un-eaten burgers on the screen. --}}
             {{!-- Uneaten burgers have a 'devoured' value of 0 (false). --}}
             <h2>Ready to devour!</h2>
@@ -15,7 +15,7 @@
                 {{/each}}
             </ul>
         </div>
-        <div class="col-sm">
+        <div class="col-sm display-database">
             <h2>Devoured!</h2>
             {{!-- Loop through each object in the array received from burgers_controller.js, and dynamically display devoured burgers on the screen. --}}
             {{!-- Devoured burgers have a 'devoured' value of 1 (true). --}}
@@ -29,18 +29,23 @@
         </div>
     </div>
 </div>
+<dic class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {{!-- Create a form that takes in a name for a new burger. The input is then processed in the script below. --}}
+            <h2 id="add-burger-title">Add a Burger</h2>
+            <form id="create-form">
 
-{{!-- Create a form that takes in a name for a new burger. The input is then processed in the script below. --}}
-<h2>Add a Burger</h2>
-<form id="create-form">
+                <div class="form-group">
+                    <label for="burgername">Burger Name:</label>
+                    <input type="text" id="burgername" name="name">
+                </div>
 
-    <div class="form-group">
-        <label for="burgername">Burger Name:</label>
-        <input type="text" id="burgername" name="name">
+                <button type="submit">Add Burger!</button>
+            </form>
+        </div>
     </div>
-
-    <button type="submit">Add Burger!</button>
-</form>
+</dic>
 
 <script>
     // Form behavior on adding a new burger.

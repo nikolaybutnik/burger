@@ -5,3 +5,29 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+#create-form {
+  display: block;
+  text-align: center;
+}
+
+#add-burger-title {
+  text-align: center;
+}
+
+.display-database {
+  text-align: center;
+}
+
+ul {
+  display: inline-block;
+  text-align: left;
+}
+
+li {
+  padding: 10px 0 10px 20px;
+}
+
+#main-title {
+  text-align: center;
+}
