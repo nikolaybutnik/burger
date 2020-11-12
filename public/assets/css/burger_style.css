@@ -25,20 +25,22 @@ ul {
   text-align: left;
 }
 
-li {
-  padding: 10px 0 10px 20px;
-}
-
 #main-title {
   text-align: center;
+  margin-top: 10px;
+  font-size: 50px;
+  text-shadow: 2px 2px 5px red;
+}
+
+.database-title {
+  text-shadow: 2px 2px 5px red;
 }
 
 li {
   background-color: rgb(255, 81, 0);
   margin-bottom: 10px;
   border-radius: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 0 10px 20px;
 }
 
 .devour-it {
@@ -55,4 +57,21 @@ li {
   margin-right: 10px;
   border-radius: 25px;
   background-color: rgb(255, 203, 134);
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#burgername {
+  border-radius: 25px;
+  padding-left: 10px;
+}
+
+#submit-btn {
+  border-radius: 25px;
+  font-size: 22px;
+  margin-bottom: 20px;
 }

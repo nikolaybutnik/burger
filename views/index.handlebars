@@ -5,7 +5,7 @@
         <div class="col-sm display-database">
             {{!-- Loop through each object in the array received from burgers_controller.js, and dynamically display un-eaten burgers on the screen. --}}
             {{!-- Uneaten burgers have a 'devoured' value of 0 (false). --}}
-            <h2>Ready to devour!</h2>
+            <h2 class="database-title">Ready to devour!</h2>
             <ul>
                 {{#each burgers}}
                 {{#unless this.devoured}}
@@ -16,7 +16,7 @@
             </ul>
         </div>
         <div class="col-sm display-database">
-            <h2>Devoured!</h2>
+            <h2 class="database-title">Devoured!</h2>
             {{!-- Loop through each object in the array received from burgers_controller.js, and dynamically display devoured burgers on the screen. --}}
             {{!-- Devoured burgers have a 'devoured' value of 1 (true). --}}
             <ul>
@@ -31,16 +31,17 @@
     <div class="row">
         <div class="col-md-12">
             {{!-- Create a form that takes in a name for a new burger. The input is then processed in the script below. --}}
-            <img src="/public/assets/img/main-image.png" alt="man eating burger" width="500">
-            <h2 id="add-burger-title">Add a Burger</h2>
+            <img class="center-block" src="http://localhost:3000/assets/img/main-image.png" alt="man eating burger"
+                width="400">
+            <h2 id="add-burger-title">What would you like to order?</h2>
             <form id="create-form">
 
                 <div class="form-group">
-                    <label for="burgername">Burger Name:</label>
                     <input type="text" id="burgername" name="name">
                 </div>
 
-                <button type="submit">Add Burger!</button>
+                <button id="submit-btn" type="submit"><i class="fas fa-hamburger"></i> Order Up! <i
+                        class="fas fa-hamburger"></i></button>
             </form>
         </div>
     </div>
