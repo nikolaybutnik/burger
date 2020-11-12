@@ -48,3 +48,11 @@ li {
   border-radius: 25px;
   background-color: rgb(255, 203, 134);
 }
+
+.delete-it {
+  float: right;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 25px;
+  background-color: rgb(255, 203, 134);
+}

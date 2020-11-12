@@ -28,6 +28,10 @@ class Burger {
   ) {
     return orm.updateOne(table_name, key_val_to_set, condition_col_name, value);
   }
+
+  static async deleteOneBurger(table_name, condition_col_name, value) {
+    return orm.deleteOne(table_name, condition_col_name, value);
+  }
 }
 
 module.exports = Burger;

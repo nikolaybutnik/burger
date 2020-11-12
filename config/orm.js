@@ -38,6 +38,15 @@ const orm = {
     ]);
     return rows;
   },
+  deleteOne: async function (table_name, condition_col_name, value) {
+    const sql = "DELETE FROM ?? WHERE ?? = ?";
+    const [rows] = await connection.query(sql, [
+      table_name,
+      condition_col_name,
+      value,
+    ]);
+    return rows;
+  },
 };
 
 module.exports = orm;

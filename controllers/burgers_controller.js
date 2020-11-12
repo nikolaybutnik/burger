@@ -54,5 +54,15 @@ router.patch("/api/burgers/:id", async function (req, res) {
   }
 });
 
+router.delete("/api/burgers/:id", async function (req, res) {
+  try {
+    const id = req.params.id;
+    const burgerDelete = await Burger.deleteOneBurger("burgers", "id", id);
+    res.status(201).json(burgerDelete);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Export the router.
 module.exports = router;
