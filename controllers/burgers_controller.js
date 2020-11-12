@@ -38,7 +38,7 @@ router.post("/api/burgers", async function (req, res) {
 });
 
 // Create an api PATCH route that receives an onject send by the DEVOUR IT! button. The object contains an
-// id number that is used to find the relevant burger in tge database, and update its 'devoured' value to 'true'.
+// id number that is used to find the relevant burger in the database, and update its 'devoured' value to 'true'.
 router.patch("/api/burgers/:id", async function (req, res) {
   try {
     const id = req.params.id;
@@ -54,6 +54,8 @@ router.patch("/api/burgers/:id", async function (req, res) {
   }
 });
 
+// Create an api DELETE route that receives an onject send by the DELETE button. The object contains an
+// id number that is used to find the relevant burger in the database, and remove the row from the database.
 router.delete("/api/burgers/:id", async function (req, res) {
   try {
     const id = req.params.id;
