@@ -9,8 +9,8 @@
             <ul>
                 {{#each burgers}}
                 {{#unless this.devoured}}
-                <li>{{this.burger_name}}</li>
-                <button class="devour-it" data-id="{{this.id}} ">DEVOUR IT!</button>
+                <li>{{this.burger_name}} <button class="devour-it" data-id="{{this.id}} ">DEVOUR IT!</button></li>
+
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -31,6 +31,7 @@
     <div class="row">
         <div class="col-md-12">
             {{!-- Create a form that takes in a name for a new burger. The input is then processed in the script below. --}}
+            <img src="/public/assets/img/main-image.png" alt="man eating burger" width="500">
             <h2 id="add-burger-title">Add a Burger</h2>
             <form id="create-form">
 
