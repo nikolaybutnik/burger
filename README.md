@@ -24,6 +24,8 @@ To install the application locally, run `npm install` to install all dependencie
 ## Usage
 
 To start the application locally, run `server.js` from the CLI. The app is also hosted on Heroku.
+This application works with a SQL database to dynamically load the relevant values from the database and display them in the proper fields.
+Enter the name of the burger you want in the provided field, and it'll be added to the `Ready to devour!` field. Click `DEVOUR IT!` and the burger will be moved to the `Devoured` field. Click `DELETE` on a burger in the `Devoured` field to get rid of the burger.
 
 ## License
 
