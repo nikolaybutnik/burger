@@ -5,6 +5,7 @@ body {
   background-size: cover;
   background-position: center;
   font-family: "Lobster", cursive;
+  color: rgb(46, 46, 46);
 }
 
 #create-form {
@@ -42,6 +43,7 @@ li {
   margin-bottom: 10px;
   border-radius: 25px;
   padding: 10px 0 10px 20px;
+  font-size: 20px;
 }
 
 .devour-it {
@@ -52,12 +54,20 @@ li {
   background-color: rgb(255, 203, 134);
 }
 
+.devour-it:hover {
+  background-color: rgb(250, 182, 93);
+}
+
 .delete-it {
   float: right;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 25px;
   background-color: rgb(255, 203, 134);
+}
+
+.delete-it:hover {
+  background-color: rgb(250, 182, 93);
 }
 
 .center-block {
@@ -75,4 +85,8 @@ li {
   border-radius: 25px;
   font-size: 22px;
   margin-bottom: 20px;
+}
+
+#submit-btn:hover {
+  background-color: rgb(204, 204, 204);
 }
